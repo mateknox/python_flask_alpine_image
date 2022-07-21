@@ -1,0 +1,17 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }} - demo flask app</title>
+    {% else %}
+    <title>demo flask app</title>
+    {% endif %}
+  </head>
+  <body>
+    Available endpoints:
+    <div><a href="/index">Home</a></div>
+    <div><a href="/insert_to_db?name=Sample&mail=sample@bk.ru&date='1995-03-04'">Insert to db</a> - use headers to redefine values, mail must be unique </div>
+    <div><a href="/select_from_db?name='Sample'">Select from db</a> - use headers to redefine values</div>
+    <hr>
+    {% block content %}{% endblock %}
+  </body>
+</html>
